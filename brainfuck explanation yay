@@ -1,0 +1,25 @@
+brainfuck is an esoteric programming language made by urban müller as a experiment in 1993. it consists of 8 commands and its turing-complete, despite not being something useful on real practice coding, when building software, for example, and being more a subject used to learn low level code and machine thinking.
+
+it works based on a endless sequence of empty cells with values that go from 0 to 255, where increasing a cell with value 255 by one returns it to 0. you start from the first cell and can freely move your pointer to another cell.
+
+the commands are:
++ = increase the selected cell by one
+- = decrease the selected cell by one 
+> = move your pointer one cell to the right
+< = move your pointer one cell to the left
+[ = begin a loop that will finish when the selected cell's value is 0
+] = close the loop (its needed, like [-] that will subtract until 0 and then pass to the next command)
+, = input, stores the key pressed when the code reaches this point. the code waits until an input is given
+. = output, releases the value on the selected cells and prints it.
+
+printing values is based on the ASCII table, and brainfuck turns the value into the correspondent character
+
+for an example, saying 'hi!' (yes, in non capital letters) requires you to print the following values: 104, 105, 33. it would be possible to add + 104 times, but it is slower and not optimized. therefore, i could script it like ++++++++++[>++++++++++<-]>++++. (h). it is basically a multiplication. since 'i' is only one value higher, we can simply do it like ++++++++++[>++++++++++<-]>++++.+.
+
+33 is far from 105, which is the current cell's value. we could simply erase it with [-] and start anew, but its more practical to simply move to the next cell and multiply again.
+
+++++++++++[>++++++++++<-]>++++.+.>++++++++++[>+++<-]>+++.
+
+this code can still be more optimized by multiplying on the same loop, like
+++++++++++[>++++++++++>+++<<-]>++++.+.>+++.
+which would be a (10 . 10) (10 . 3), with the first ++++ being adding four to a cell and turning into the 'h', and so it goes on.
