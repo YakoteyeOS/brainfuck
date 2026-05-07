@@ -1,4 +1,5 @@
-brainfuck is an esoteric programming language made by urban müller as a experiment in 1993. it consists of 8 commands and its turing-complete, despite not being something useful on real practice coding, when building software, for example, and being more a subject used to learn low level code and machine thinking.
+brainfuck is an esoteric programming language made by urban müller as a experiment in 1993. 
+it consists of 8 commands and its turing-complete, despite not being something useful on real practice coding, when building software, for example, and being more a subject used to learn low level code and machine thinking.
 
 it works based on a endless sequence of empty cells with values that go from 0 to 255, where increasing a cell with value 255 by one returns it to 0. you start from the first cell and can freely move your pointer to another cell.
 
